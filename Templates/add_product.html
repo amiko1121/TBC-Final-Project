@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+add product
+{% endblock %}
+{% block content %}
+<div class="container-fluid bg-white mt-5 border-top border-bottom shadow">
+<div class="container-md">
+    <form method="post" enctype="multipart/form-data">
+        {{form.hidden_tag()}}
+        {{form.name(class= "form-control mt-4", placeholder=form.name.label.text) }}
+        {{form.price(class= "form-control mt-4", placeholder=form.price.label.text) }}
+        {{form.phonenumber1(class= "form-control mt-4", placeholder=form.phonenumber1.label.text) }}
+        {{form.img(class= "form-control mt-4", placeholder=form.img.label.text, accept = ".jpg,.png,.jpeg")}}
+        {{form.img2(class= "form-control mt-4", placeholder=form.img2.label.text, accept = ".jpg,.png,.jpeg")}}
+        {{form.img3(class= "form-control mt-4", placeholder=form.img3.label.text, accept = ".jpg,.png,.jpeg")}}
+        {{form.img4(class= "form-control mt-4", placeholder=form.img4.label.text, accept = ".jpg,.png,.jpeg")}}
+        {{form.img5(class= "form-control mt-4", placeholder=form.img5.label.text, accept = ".jpg,.png,.jpeg")}}
+        {{form.engine_type(class= "form-control mt-4", placeholder=form.engine_type.label.text) }}
+        {{form.cilindri(class="form-select mt-4",placeholder=form.cilindri.label.text)}}
+        {{form.engine(class= "form-range mt-4",placeholder=form.engine.label.text) }}
+        {{form.colour(class= "form-control mt-4", placeholder=form.colour.label.text) }}
+        {{form.interior_colour(class= "form-control mt-4", placeholder=form.interior_colour.label.text) }}
+        {{form.year(class= "form-control mt-4", placeholder=form.year.label.text) }}
+        {{form.transmission(class= "form-control mt-4", placeholder=form.transmission.label.text) }}
+        {{form.category(class= "form-control mt-4", placeholder=form.category.label.text) }}
+        {{form.mileage(class= "form-control mt-4", placeholder=form.mileage.label.text) }}
+        {{form.coment(class= "form-control mt-4", placeholder=form.coment.label.text) }}
+
+
+
+
+
+
+        {{form.submit(class="btn btn-warning mt-4 ") }}
+    </form>
+</div>
+
+{% endblock %}
+
+</div>

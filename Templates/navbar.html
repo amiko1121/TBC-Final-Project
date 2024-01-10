@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-lg">
+        <a class="navbar-brand" href="/"><h5> Amiko's online car shop </h5></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <nav class="navbar bg-body-tertiary">
+                    <div class="container">
+                        <a class="navbar-brand" href="https://www.tbceducation.ge/">
+                            <img src="/static/tbc-logo.png" alt="Bootstrap" width="60" height="50">
+                        </a>
+                    </div>
+                </nav>
+                <li class="nav-item mx-1 my-4">
+                    <a class="nav-link active" aria-current="page" href="/"><h6> მთავარი </h6></a>
+                </li>
+                <li class="nav-item mx-1 my-4">
+                    <a class="nav-link" href="/about"><h6> ჩვენს შესახებ </h6></a>
+                </li>
+                <div class="dropdown mx-1 my-4">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                        კატეგორიები
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/category/1">სედანი</a></li>
+                        <li><a class="dropdown-item" href="/category/2">ჯიპი</a></li>
+                        <li><a class="dropdown-item" href="/category/3">მძიმე ტექნიკა</a></li>
+                    </ul>
+                </div>
+                {% if current_user.role=="admin" %}
+                <li class="nav-item mx-1 my-4">
+                    <a class="nav-link" href="/addproduct"><h6> პროდუქტის დამატება </h6></a>
+                </li>
+                {% endif %}
+            </ul>
+
+        </div>
+        <div class="d-flex mx-1 my-4" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search"  id="searchInput">
+            <button class="btn btn-outline-success" type="submit"  id="searchButton">Search</button>
+        </div>
+        {% if current_user.is_authenticated %}
+        <form class="d-flex mx-1 my-4">
+            <a class="btn btn-danger " href="/logout">logout</a>
+        </form>
+        {%else%}
+        <form class="d-flex btn-group mx-1 my-4">
+            <a href="/register" class="btn btn-outline-danger" type="submit">Register</a>
+            <a href="/login" class="btn btn-outline-success" type="submit">Sign in</a>
+        </form>
+        {%endif%}
+    </div>
+</nav>

@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ product.name}}
+{% endblock %}
+{% block content %}
+<div class="container-md">
+
+<div id="carouselExampleIndicators" class="carousel slide w-50  mx-2 my-4">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/static/{{ product.img}}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item ">
+      <img src="/static/{{ product.img2 }}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item ">
+      <img src="/static/{{ product.img3 }}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item ">
+      <img src="/static/{{ product.img4}}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item ">
+      <img src="/static/{{ product.img5}}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+<div class="border border-success p-2 mb-4 mx-2 my-4">{{product.coment}}</div>
+
+
+<table class="table mx-2 my-4">
+  <tbody>
+    <tr>
+      <th scope="row">მოდელი</th>
+      <td>{{product.name}}</td>
+    </tr>
+    <tr>
+      <th scope="row">ფასი</th>
+      <td>{{product.price}}$</td>
+    </tr>
+  <tr>
+      <th scope="row">ძრავის მოცულობა</th>
+      <td>{{product.engine}}</td>
+    </tr>
+  <tr>
+    <tr>
+      <th scope="row">ცილინდრების რაოდენობა</th>
+      <td>{{product.cilindri}}</td>
+    </tr>
+  <tr>
+      <th scope="row">საწვავის ტიპი</th>
+      <td>{{product.engine_type}}</td>
+    </tr>
+  <tr>
+      <th scope="row">ფერი</th>
+      <td>{{product.colour}}</td>
+    </tr>
+  <tr>
+    <tr>
+      <th scope="row">სალონის ფერი</th>
+      <td>{{product.interior_colour}}</td>
+    </tr>
+  <tr>
+      <th scope="row">ტრანსმისია</th>
+      <td>{{product.transmission}}</td>
+    </tr>
+  <tr>
+      <th scope="row">მანქანის წლოვანება</th>
+      <td>{{product.year}}</td>
+    </tr>
+  <tr>
+      <th scope="row">გარბენი</th>
+      <td>{{product.mileage}}კმ</td>
+    </tr>
+  <th scope="row">საკონტაქტო ნომერი</th>
+      <td>{{product.phonenumber1}}</td>
+    </tr>
+
+
+  </tbody>
+</table>
+</div>
+
+
+{% endblock %}
+

@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card text-bg-dark mx-1 my-3">
+    <img src="/static/2019-A-SEDAN-GALLERY-001-SET-R-FE-DR.jpg" class="card-img" alt="...">
+    <div class="card-img-overlay">
+        <h5 class="card-title">სედანი</h5>
+    </div>
+</div>
+
+
+<div class="row  ">
+    {% for product in products %}
+    {% if product.category_id==1 %}
+
+    <div class="col">
+        <div class="card" style="width: 18rem; mx-2 my-4">
+            <img src=" /static/{{ product.img }}" class="card-img-top"
+                 alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{product.name}} {{product.year}}</h5>
+                <h5 class="card-text">{{product.price}}$</h5>
+                <a href="/product/{{product.id}}" class="btn btn-primary ">სრულად ნახვა</a>
+            </div>
+            {% if current_user.role=="admin" %}
+            <li class="list-group-item mx-3 my-1">
+                <a href="/delete_product/{{product.id}}" class="btn btn-danger">წაშლა</a>
+            </li>
+
+
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+
+</div>
+
+
+
+<div class="card text-bg-dark mx-1 my-3">
+    <img src="/static/MBCAN-2018-GLC-SUV-CATEGORY-HERO-1-1-DR.jpg" class="card-img" alt="...">
+    <div class="card-img-overlay">
+        <h5 class="card-title">ჯიპი</h5>
+    </div>
+</div>
+
+
+<div class="row  ">
+    {% for product in products %}
+    {% if product.category_id==2 %}
+
+    <div class="col">
+        <div class="card" style="width: 18rem; mx-2 my-4">
+            <img src=" /static/{{ product.img }}" class="card-img-top"
+                 alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{product.name}} {{product.year}}</h5>
+                <h5 class="card-text">{{product.price}}$</h5>
+                <a href="/product/{{product.id}}" class="btn btn-primary ">სრულად ნახვა</a>
+            </div>
+            {% if current_user.role=="admin" %}
+            <li class="list-group-item mx-3 my-1">
+                <a href="/delete_product/{{product.id}}" class="btn btn-danger">წაშლა</a>
+            </li>
+
+
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+
+</div>
+
+<div class="card text-bg-dark mx-1 my-3">
+    <img src="/static/blogs---header-image--1--0bc68cdaf0aa4c9cb5fc164691d23881.jpg" class="card-img" alt="...">
+    <div class="card-img-overlay">
+        <h5 class="card-title">მძიმე ტექნიკა</h5>
+    </div>
+</div>
+
+
+<div class="row  ">
+    {% for product in products %}
+    {% if product.category_id==3 %}
+
+    <div class="col">
+        <div class="card" style="width: 18rem; mx-2 my-4">
+            <img src=" /static/{{ product.img }}" class="card-img-top"
+                 alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{product.name}} {{product.year}}</h5>
+                <h5 class="card-text">{{product.price}}$</h5>
+                <a href="/product/{{product.id}}" class="btn btn-primary ">სრულად ნახვა</a>
+            </div>
+            {% if current_user.role=="admin" %}
+            <li class="list-group-item mx-3 my-1">
+                <a href="/delete_product/{{product.id}}" class="btn btn-danger">წაშლა</a>
+            </li>
+
+
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

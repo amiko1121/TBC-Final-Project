@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card text-bg-dark mx-1 my-3">
+    <img src="/static/seo-suv-vs-sedan-compressed_10062023.jpg" class="card-img" alt="...">
+    <div class="card-img-overlay">
+        <h5 class="card-title"></h5>
+    </div>
+</div>
+
+
+<div class="row  ">
+    {% for product in products %}
+
+
+
+
+
+
+    <div class="col">
+        <div class="card mx-2 my-4" style="width: 18rem;  mx-2 my-4">
+            <img src=" /static/{{ product.img }}" class="card-img-top "
+                 alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{product.name}} {{product.year}}</h5>
+                <h5 class="card-text">{{product.price}}$</h5>
+                <a href="/product/{{product.id}}" class="btn btn-primary ">სრულად ნახვა</a>
+            </div>
+            {% if current_user.role=="admin" %}
+
+            <li class="list-group-item mx-3 my-1">
+                <a href="/delete_product/{{product.id}}" class="btn btn-danger">წაშლა</a>
+            </li>
+
+
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
